@@ -1,0 +1,88 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="C4 Level 2 - Container Diagram" id="c4-level2">
+    <mxGraphModel dx="1310" dy="937" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C4 Level 2: Container Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Complaint Management System - Containers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="400" y="50" width="600" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="system-boundary" value="CMS System Boundary" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E75B6;strokeWidth=2;verticalAlign=top;fontSize=12;fontStyle=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="120" width="840" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="users" value="" style="shape=umlActor;html=1;fillColor=#F4B183;strokeColor=#C55A11;" parent="1" vertex="1">
+          <mxGeometry x="80" y="320" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="users-label" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;Users&lt;/b&gt;&lt;br&gt;Consumers, Agents,&lt;br&gt;Support, Managers&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=9;align=center;" parent="1" vertex="1">
+          <mxGeometry x="50" y="430" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="container-web" value="&lt;b&gt;Web Application&lt;/b&gt;&lt;br&gt;[React + Material-UI]&lt;br&gt;&lt;br&gt;User interface for all users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B9BD5;strokeColor=#2E75B6;fontColor=#FFFFFF;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="320" y="160" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="container-api" value="&lt;b&gt;API Application&lt;/b&gt;&lt;br&gt;[Django + DRF]&lt;br&gt;&lt;br&gt;REST API, business logic,&lt;br&gt;authentication" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B9BD5;strokeColor=#2E75B6;fontColor=#FFFFFF;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="610" y="160" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="container-worker" value="&lt;b&gt;Background Worker&lt;/b&gt;&lt;br&gt;[Celery]&lt;br&gt;&lt;br&gt;Sends notifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B9BD5;strokeColor=#2E75B6;fontColor=#FFFFFF;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="900" y="160" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="container-db" value="&lt;b&gt;Database&lt;/b&gt;&lt;br&gt;[PostgreSQL]&lt;br&gt;&lt;br&gt;Stores users, problems,&lt;br&gt;organizations (multi-tenant)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BFBFBF;strokeColor=#808080;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="460" y="380" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="container-cache" value="&lt;b&gt;Cache / Message Queue&lt;/b&gt;&lt;br&gt;[Redis]&lt;br&gt;&lt;br&gt;Sessions, cache, task queue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BFBFBF;strokeColor=#808080;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="760" y="380" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="container-storage" value="&lt;b&gt;File Storage&lt;/b&gt;&lt;br&gt;[Cloud Storage]&lt;br&gt;&lt;br&gt;Attachments, exports" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BFBFBF;strokeColor=#808080;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="460" y="540" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-email" value="&lt;b&gt;Email Service&lt;/b&gt;&lt;br&gt;[External]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9D18E;strokeColor=#548235;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-sms" value="&lt;b&gt;SMS Service&lt;/b&gt;&lt;br&gt;[External]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9D18E;strokeColor=#548235;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="link-users-web" value="Uses" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=9;" parent="1" source="users-label" target="container-web" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-web-api" value="API calls [HTTPS]" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=9;" parent="1" source="container-web" target="container-api" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-api-db" value="Reads/Writes [SQL]" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#808080;fontSize=9;" parent="1" source="container-api" target="container-db" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-api-cache" value="Cache/Queue" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#808080;fontSize=9;" parent="1" source="container-api" target="container-cache" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-api-storage" value="Files" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#808080;fontSize=9;" parent="1" source="container-api" target="container-storage" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-worker-cache" value="Reads tasks" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#808080;fontSize=9;" parent="1" source="container-worker" target="container-cache" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-worker-email" value="Sends" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#548235;fontSize=9;" parent="1" source="container-worker" target="ext-email" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-worker-sms" value="Sends" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#548235;fontSize=9;" parent="1" source="container-worker" target="ext-sms" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-box" value="Legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="560" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-app" value="Application" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B9BD5;strokeColor=#2E75B6;fontColor=#FFFFFF;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="50" y="585" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-data" value="Data Store" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BFBFBF;strokeColor=#808080;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="140" y="585" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-external" value="External" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9D18E;strokeColor=#548235;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="50" y="615" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-person" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Person&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="140" y="615" width="80" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

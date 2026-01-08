@@ -1,0 +1,106 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="ER Diagram" id="er-diagram">
+    <mxGraphModel dx="1405" dy="998" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Entity Relationship Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="PostgreSQL with Schema-Based Multi-Tenancy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="400" y="50" width="600" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="public-schema" value="PUBLIC SCHEMA (Shared)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;strokeWidth=2;verticalAlign=top;fontSize=12;fontStyle=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="100" width="400" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="entity-org" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Organization&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=24;fillColor=#FFF3E0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#C55A11;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="60" y="140" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="org-pk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔑 id: UUID (PK)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;" parent="entity-org" vertex="1">
+          <mxGeometry y="24" width="160" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="org-fields" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;schema_name: VARCHAR&lt;br&gt;name: VARCHAR&lt;br&gt;is_active: BOOLEAN&lt;br&gt;settings: JSONB&lt;br&gt;created_at: TIMESTAMP&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;" parent="entity-org" vertex="1">
+          <mxGeometry y="42" width="160" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="entity-domain" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Domain&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=24;fillColor=#FFF3E0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#C55A11;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="260" y="140" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-pk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔑 id: SERIAL (PK)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;" parent="entity-domain" vertex="1">
+          <mxGeometry y="24" width="160" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-fields" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔗 tenant_id: UUID (FK)&lt;br&gt;domain: VARCHAR&lt;br&gt;is_primary: BOOLEAN&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;" parent="entity-domain" vertex="1">
+          <mxGeometry y="42" width="160" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant-schema" value="TENANT SCHEMA (Per Company)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DEEBF7;strokeColor=#2E75B6;strokeWidth=2;verticalAlign=top;fontSize=12;fontStyle=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="90" width="880" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="entity-user" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;User&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=24;fillColor=#E2F0D9;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#548235;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="520" y="140" width="180" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="user-pk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔑 id: UUID (PK)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;" parent="entity-user" vertex="1">
+          <mxGeometry y="24" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="user-fields" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;username: VARCHAR&lt;br&gt;email: VARCHAR&lt;br&gt;password_hash: VARCHAR&lt;br&gt;role: VARCHAR&lt;br&gt;is_active: BOOLEAN&lt;br&gt;created_at: TIMESTAMP&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;" parent="entity-user" vertex="1">
+          <mxGeometry y="42" width="180" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="entity-problem" value="&lt;b&gt;Problem&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=24;fillColor=#BDD7EE;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2E75B6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="760" y="140" width="200" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="problem-pk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔑 id: UUID (PK)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;" parent="entity-problem" vertex="1">
+          <mxGeometry y="24" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="problem-fields" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;problem_id: VARCHAR&lt;br&gt;title: VARCHAR&lt;br&gt;description: TEXT&lt;br&gt;status: VARCHAR&lt;br&gt;priority: VARCHAR&lt;br&gt;category: VARCHAR&lt;br&gt;🔗 created_by: UUID (FK)&lt;br&gt;🔗 assigned_to: UUID (FK)&lt;br&gt;created_at: TIMESTAMP&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;" parent="entity-problem" vertex="1">
+          <mxGeometry y="42" width="200" height="148" as="geometry" />
+        </mxCell>
+        <mxCell id="entity-history" value="&lt;b&gt;ProblemHistory&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=24;fillColor=#BDD7EE;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2E75B6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="760" y="380" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="history-pk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔑 id: UUID (PK)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;" parent="entity-history" vertex="1">
+          <mxGeometry y="24" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="history-fields" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔗 problem_id: UUID (FK)&lt;br&gt;🔗 changed_by: UUID (FK)&lt;br&gt;old_status: VARCHAR&lt;br&gt;new_status: VARCHAR&lt;br&gt;notes: TEXT&lt;br&gt;created_at: TIMESTAMP&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;" parent="entity-history" vertex="1">
+          <mxGeometry y="42" width="200" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="entity-assignment" value="&lt;b&gt;Assignment&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=24;fillColor=#BDD7EE;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2E75B6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="140" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="assignment-pk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔑 id: UUID (PK)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;" parent="entity-assignment" vertex="1">
+          <mxGeometry y="24" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="assignment-fields" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔗 problem_id: UUID (FK)&lt;br&gt;🔗 assigned_by: UUID (FK)&lt;br&gt;🔗 assigned_to: UUID (FK)&lt;br&gt;notes: TEXT&lt;br&gt;created_at: TIMESTAMP&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=9;" parent="entity-assignment" vertex="1">
+          <mxGeometry y="42" width="200" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-org-domain" value="1:N" style="endArrow=ERmany;startArrow=ERone;html=1;strokeWidth=2;strokeColor=#C55A11;fontSize=10;startFill=0;endFill=0;" parent="1" source="entity-org" target="entity-domain" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-user-problem" value="1:N" style="endArrow=ERmany;startArrow=ERone;html=1;strokeWidth=2;strokeColor=#548235;fontSize=10;startFill=0;endFill=0;" parent="1" source="entity-user" target="entity-problem" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-problem-history" value="1:N" style="endArrow=ERmany;startArrow=ERone;html=1;strokeWidth=2;strokeColor=#2E75B6;fontSize=10;startFill=0;endFill=0;" parent="1" source="entity-problem" target="entity-history" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-problem-assignment" value="1:N" style="endArrow=ERmany;startArrow=ERone;html=1;strokeWidth=2;strokeColor=#2E75B6;fontSize=10;startFill=0;endFill=0;" parent="1" source="entity-problem" target="entity-assignment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-box" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Legend&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="520" y="560" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-shared" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Shared (Public Schema)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#C55A11;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="530" y="590" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-tenant" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Tenant Schema&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="660" y="590" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-user" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;User Entity&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#548235;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="770" y="590" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-pk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔑 = Primary Key&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="530" y="620" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-fk" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔗 = Foreign Key&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="640" y="620" width="100" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

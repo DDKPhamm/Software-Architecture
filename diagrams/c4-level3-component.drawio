@@ -1,0 +1,146 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="C4 Level 3 - Component Diagram" id="c4-level3">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="C4 Level 3: Component Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="subtitle" value="API Application - Internal Components" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="50" width="600" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- API Boundary -->
+        <mxCell id="api-boundary" value="API Application [Django + DRF]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E75B6;strokeWidth=2;verticalAlign=top;fontSize=12;fontStyle=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="100" width="1000" height="650" as="geometry" />
+        </mxCell>
+        
+        <!-- External: Web App -->
+        <mxCell id="web-app" value="&lt;b&gt;Web App&lt;/b&gt;&lt;br&gt;[React]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B9BD5;strokeColor=#2E75B6;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- External: Database -->
+        <mxCell id="database" value="&lt;b&gt;Database&lt;/b&gt;&lt;br&gt;[PostgreSQL]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BFBFBF;strokeColor=#808080;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- External: Cache -->
+        <mxCell id="cache" value="&lt;b&gt;Cache&lt;/b&gt;&lt;br&gt;[Redis]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BFBFBF;strokeColor=#808080;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="380" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Layer 1: Middleware -->
+        <mxCell id="layer1-label" value="Middleware Layer" style="text;html=1;strokeColor=none;fillColor=#DEEBF7;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="120" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-auth-middleware" value="&lt;b&gt;Auth Middleware&lt;/b&gt;&lt;br&gt;JWT validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DEEBF7;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="150" width="120" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-tenant-middleware" value="&lt;b&gt;Tenant Middleware&lt;/b&gt;&lt;br&gt;Company routing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DEEBF7;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="400" y="150" width="120" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Layer 2: Services -->
+        <mxCell id="layer2-label" value="Service Layer (Django Apps)" style="text;html=1;strokeColor=none;fillColor=#BDD7EE;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="160" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-auth-service" value="&lt;b&gt;Authentication&lt;/b&gt;&lt;br&gt;[auth app]&lt;br&gt;&lt;br&gt;Login, JWT tokens" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="260" width="140" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-user-service" value="&lt;b&gt;User Management&lt;/b&gt;&lt;br&gt;[users app]&lt;br&gt;&lt;br&gt;User CRUD, roles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="420" y="260" width="140" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-problem-service" value="&lt;b&gt;Problem Management&lt;/b&gt;&lt;br&gt;[problems app]&lt;br&gt;&lt;br&gt;Problem CRUD, status" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="260" width="140" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-assignment-service" value="&lt;b&gt;Assignment&lt;/b&gt;&lt;br&gt;[assignments app]&lt;br&gt;&lt;br&gt;Assign problems" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="780" y="260" width="140" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-notification-service" value="&lt;b&gt;Notifications&lt;/b&gt;&lt;br&gt;[notifications app]&lt;br&gt;&lt;br&gt;Email, SMS alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="960" y="260" width="140" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-org-service" value="&lt;b&gt;Organizations&lt;/b&gt;&lt;br&gt;[orgs app]&lt;br&gt;&lt;br&gt;Tenant management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="380" width="140" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Layer 3: Data Access -->
+        <mxCell id="layer3-label" value="Data Access Layer" style="text;html=1;strokeColor=none;fillColor=#D6DCE5;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="500" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-orm" value="&lt;b&gt;Django ORM&lt;/b&gt;&lt;br&gt;Database abstraction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6DCE5;strokeColor=#808080;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="530" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-cache-mgr" value="&lt;b&gt;Cache Manager&lt;/b&gt;&lt;br&gt;Redis client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6DCE5;strokeColor=#808080;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="420" y="530" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="comp-task-queue" value="&lt;b&gt;Task Queue&lt;/b&gt;&lt;br&gt;Celery client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6DCE5;strokeColor=#808080;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="530" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationships -->
+        <mxCell id="link-web-auth" value="HTTP" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=8;" edge="1" parent="1" source="web-app" target="comp-auth-middleware">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="link-middleware" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=8;" edge="1" parent="1" source="comp-auth-middleware" target="comp-tenant-middleware">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="link-tenant-services" value="routes" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#666;fontSize=8;dashed=1;" edge="1" parent="1" source="comp-tenant-middleware" target="comp-problem-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="link-problem-assignment" value="uses" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#666;fontSize=8;dashed=1;" edge="1" parent="1" source="comp-problem-service" target="comp-assignment-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="link-problem-notification" value="triggers" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#666;fontSize=8;dashed=1;" edge="1" parent="1" source="comp-problem-service" target="comp-notification-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="link-services-orm" value="uses" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#808080;fontSize=8;" edge="1" parent="1" source="comp-problem-service" target="comp-orm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="link-orm-db" value="SQL" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#808080;fontSize=8;" edge="1" parent="1" source="comp-orm" target="database">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="link-cache-redis" value="Redis" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#808080;fontSize=8;" edge="1" parent="1" source="comp-cache-mgr" target="cache">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend-box" value="Legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="500" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-middleware" value="Middleware" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DEEBF7;strokeColor=#2E75B6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="810" y="525" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-service" value="Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BDD7EE;strokeColor=#2E75B6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="900" y="525" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-data" value="Data Access" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6DCE5;strokeColor=#808080;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="990" y="525" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,79 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="C4 Level 1 - System Context" id="c4-level1">
+    <mxGraphModel dx="1066" dy="845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C4 Level 1: System Context Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="20" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Complaint Management System (CMS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="50" width="500" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cms-system" value="&lt;b&gt;Complaint Management System&lt;/b&gt;&lt;br&gt;&lt;br&gt;[Software System]&lt;br&gt;&lt;br&gt;Allows customers to register and track problems. Staff can assign and resolve issues." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B9BD5;strokeColor=#2E75B6;fontColor=#FFFFFF;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="440" y="280" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-consumer" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#F4B183;strokeColor=#C55A11;" parent="1" vertex="1">
+          <mxGeometry x="100" y="180" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="label-consumer" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;Consumer&lt;/b&gt;&lt;br&gt;[Person]&lt;br&gt;Registers problems and tracks status&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="60" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-agent" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#F4B183;strokeColor=#C55A11;" parent="1" vertex="1">
+          <mxGeometry x="100" y="420" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="label-agent" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;Help Desk Agent&lt;/b&gt;&lt;br&gt;[Person]&lt;br&gt;Logs and assigns problems&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="60" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-support" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#F4B183;strokeColor=#C55A11;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="180" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="label-support" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;Support Person&lt;/b&gt;&lt;br&gt;&lt;/font&gt;[&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Person&lt;/font&gt;]&lt;br&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Resolves assigned problems&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-manager" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#F4B183;strokeColor=#C55A11;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="420" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="label-manager" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;Manager&lt;/b&gt;&lt;br&gt;[Person]&lt;br&gt;Monitors performance&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-email" value="&lt;b&gt;Email Service&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Sends notifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9D18E;strokeColor=#548235;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="340" y="100" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-sms" value="&lt;b&gt;SMS Service&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Sends SMS alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9D18E;strokeColor=#548235;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="720" y="100" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="link-consumer" value="Uses [HTTPS]" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=9;" parent="1" source="label-consumer" target="cms-system" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-agent" value="Uses [HTTPS]" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=9;" parent="1" source="label-agent" target="cms-system" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-support" value="Uses [HTTPS]" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=9;" parent="1" source="label-support" target="cms-system" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-manager" value="Uses [HTTPS]" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#2E75B6;fontSize=9;" parent="1" source="label-manager" target="cms-system" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-email" value="Sends emails" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#548235;fontSize=9;" parent="1" source="cms-system" target="ext-email" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-sms" value="Sends SMS" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#548235;fontSize=9;" parent="1" source="cms-system" target="ext-sms" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-box" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Legend&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="620" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-person" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Person&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="50" y="645" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-system" value="Software System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B9BD5;strokeColor=#2E75B6;fontColor=#FFFFFF;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="140" y="645" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-external" value="External System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9D18E;strokeColor=#548235;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="240" y="645" width="90" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

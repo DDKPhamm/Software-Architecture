@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="C4 Level 4 - Class Diagram" id="class-diagram">
+    <mxGraphModel dx="1429" dy="1022" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C4 Level 4: Class Diagram (Domain Model)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Core Domain Classes - Django Models" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="400" y="50" width="600" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="class-org" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Organization&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FBE5D6;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#C55A11;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="40" y="100" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="org-attrs" value="- id: UUID&lt;br&gt;- schema_name: str&lt;br&gt;- name: str&lt;br&gt;- is_active: bool&lt;br&gt;- created_at: datetime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-org" vertex="1">
+          <mxGeometry y="26" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="org-methods" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;+ create_schema()&lt;br&gt;+ get_configuration()&lt;/font&gt;" style="text;strokeColor=none;fillColor=#FFF3E0;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-org" vertex="1">
+          <mxGeometry y="106" width="200" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="class-user" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;User&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E2F0D9;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#548235;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="300" y="100" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="user-attrs" value="- id: UUID&lt;br&gt;- username: str&lt;br&gt;- email: str&lt;br&gt;- password_hash: str&lt;br&gt;- role: str (CONSUMER|AGENT|...)&lt;br&gt;- is_active: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-user" vertex="1">
+          <mxGeometry y="26" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="user-methods" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;+ check_password()&lt;br&gt;+ has_permission()&lt;/font&gt;" style="text;strokeColor=none;fillColor=#F0FFF0;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-user" vertex="1">
+          <mxGeometry y="126" width="200" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="class-problem" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Problem&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#DEEBF7;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2E75B6;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="560" y="100" width="220" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="problem-attrs" value="- id: UUID&lt;br&gt;- problem_id: str&lt;br&gt;- title: str&lt;br&gt;- description: text&lt;br&gt;- status: str (NEW|ASSIGNED|...)&lt;br&gt;- priority: str (LOW|MEDIUM|...)&lt;br&gt;- category: str&lt;br&gt;- created_by: FK(User)&lt;br&gt;- assigned_to: FK(User)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-problem" vertex="1">
+          <mxGeometry y="26" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="problem-methods" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;+ update_status()&lt;br&gt;+ assign_to()&lt;br&gt;+ generate_problem_id()&lt;/font&gt;" style="text;strokeColor=none;fillColor=#E6F2FF;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-problem" vertex="1">
+          <mxGeometry y="156" width="220" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="class-history" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;ProblemHistory&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#DEEBF7;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2E75B6;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="560" y="380" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="history-attrs" value="- id: UUID&lt;br&gt;- problem: FK(Problem)&lt;br&gt;- changed_by: FK(User)&lt;br&gt;- old_status: str&lt;br&gt;- new_status: str&lt;br&gt;- notes: text&lt;br&gt;- created_at: datetime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-history" vertex="1">
+          <mxGeometry y="26" width="220" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="class-assignment" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Assignment&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#DEEBF7;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2E75B6;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="840" y="100" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="assignment-attrs" value="- id: UUID&lt;br&gt;- problem: FK(Problem)&lt;br&gt;- assigned_by: FK(User)&lt;br&gt;- assigned_to: FK(User)&lt;br&gt;- notes: text&lt;br&gt;- created_at: datetime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-assignment" vertex="1">
+          <mxGeometry y="26" width="200" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="services-label" value="Service Classes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="340" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="class-problem-service" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;ProblemService&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#D9E2F3;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#4472C4;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="40" y="380" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ps-methods" value="+ create_problem()&lt;br&gt;+ update_status()&lt;br&gt;+ get_problems_for_user()&lt;br&gt;+ search_problems()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-problem-service" vertex="1">
+          <mxGeometry y="26" width="200" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="class-auth-service" value="&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;AuthService&lt;/font&gt;&lt;/b&gt;" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#D9E2F3;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#4472C4;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="280" y="380" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="as-methods" value="+ authenticate()&lt;br&gt;+ generate_tokens()&lt;br&gt;+ validate_token()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=10;" parent="class-auth-service" vertex="1">
+          <mxGeometry y="26" width="200" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-user-problem" value="creates" style="endArrow=open;html=1;strokeWidth=1;strokeColor=#666;fontSize=9;endFill=0;" parent="1" source="class-user" target="class-problem" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-problem-history" value="has" style="endArrow=open;html=1;strokeWidth=1;strokeColor=#666;fontSize=9;endFill=0;" parent="1" source="class-problem" target="class-history" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-problem-assignment" value="has" style="endArrow=open;html=1;strokeWidth=1;strokeColor=#666;fontSize=9;endFill=0;" parent="1" source="class-problem" target="class-assignment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-service-problem" value="uses" style="endArrow=open;html=1;strokeWidth=1;strokeColor=#4472C4;fontSize=9;endFill=0;dashed=1;" parent="1" source="class-problem-service" target="class-problem" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-service-user" value="uses" style="endArrow=open;html=1;strokeWidth=1;strokeColor=#4472C4;fontSize=9;endFill=0;dashed=1;" parent="1" source="class-auth-service" target="class-user" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-box" value="Legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="840" y="300" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-org" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Organization&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE5D6;strokeColor=#C55A11;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="850" y="325" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-user" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;User&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#548235;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="930" y="325" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-domain" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Domain&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DEEBF7;strokeColor=#2E75B6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="1010" y="325" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-service" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Service&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9E2F3;strokeColor=#4472C4;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="850" y="350" width="70" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
